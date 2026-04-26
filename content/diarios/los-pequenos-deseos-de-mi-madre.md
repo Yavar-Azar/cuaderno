@@ -1,7 +1,7 @@
 ---
 title: "Los pequeños deseos de mi madre"
 date: 2026-04-26
-draft: true
+draft: false
 summary: ""
 tags: ["madre", "memoria", "juventud", "familia"]
 cover: "/imagenes/viaje.png"

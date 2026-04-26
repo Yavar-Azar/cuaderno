@@ -1,0 +1,7 @@
+{{ $tone := .Get "tipo" | default "idea" }}
+<aside class="note-box note-{{ $tone }}">
+  {{ with .Get "titulo" }}<p class="note-title">{{ . }}</p>{{ end }}
+  <div class="note-content">
+    {{ .Inner | markdownify }}
+  </div>
+</aside>

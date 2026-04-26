@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="{{ site.Language.Lang | default `es` }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }} | {{ site.Title }}{{ end }}</title>
+    <meta name="description" content="{{ with .Params.summary }}{{ . }}{{ else }}{{ with .Description }}{{ . }}{{ else }}{{ site.Params.description }}{{ end }}{{ end }}">
+    <link rel="canonical" href="{{ .Params.canonical | default .Permalink }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ `css/site.css` | relURL }}">
+    {{ with .OutputFormats.Get "RSS" -}}
+      <link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .RelPermalink }}" title="{{ site.Title }}">
+    {{ end -}}
+  </head>
+  <body>
+    <div class="page-shell">
+      {{ partial "site-header.html" . }}
+      <main id="contenido">
+        {{ block "main" . }}{{ end }}
+      </main>
+      {{ partial "site-footer.html" . }}
+    </div>
+  </body>
+</html>

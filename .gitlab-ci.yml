@@ -1,0 +1,44 @@
+stages:
+  - build
+  - deploy
+
+image: alpine:latest
+
+before_script:
+  - apk add --no-cache git curl bash
+
+build:
+  stage: build
+  before_script:
+    - apk add --no-cache wget
+    - wget https://github.com/gohugoio/hugo/releases/download/v0.128.0/hugo_0.128.0_Linux-64bit.tar.gz
+    - tar -xzf hugo_0.128.0_Linux-64bit.tar.gz
+  script:
+    - ./hugo --minify
+    - ls -la public/
+  artifacts:
+    paths:
+      - public
+    expire_in: 30 days
+  only:
+    - main
+    - master
+
+pages:
+  stage: deploy
+  script:
+    - echo "Desplegando a GitLab Pages..."
+  artifacts:
+    paths:
+      - public
+  only:
+    - main
+    - master
+  needs:
+    - build
+
+# Cache para dependendencias
+cache:
+  paths:
+    - vendor/
+    - node_modules/

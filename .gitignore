@@ -1,0 +1,38 @@
+# Hugo
+public/
+resources/_gen/
+assets/jsconfig.json
+assets/tsconfig.json
+
+# Dependencias
+node_modules/
+vendor/
+Gemfile.lock
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+*.sublime-project
+*.sublime-workspace
+
+# Logs
+*.log
+
+# Temporal
+.env
+.env.local
+.DS_Store
+Thumbs.db
+
+# Archivos compilados
+*.exe
+*.dll
+*.so
+
+# Media (opcional - descomenta si quieres versionarlas)
+# imagenes/**
+# !imagenes/.gitkeep

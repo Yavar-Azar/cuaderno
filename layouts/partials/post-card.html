@@ -1,0 +1,12 @@
+<article class="post-card">
+  <p class="meta-line">{{ .Date.Format "2 Jan 2006" }} · {{ .Section | title }}</p>
+  <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+  <p>{{ with .Params.summary }}{{ . }}{{ else }}{{ .Summary }}{{ end }}</p>
+  {{ with .Params.tags }}
+    <div class="tag-row">
+      {{ range first 3 . }}
+        <span>{{ . }}</span>
+      {{ end }}
+    </div>
+  {{ end }}
+</article>

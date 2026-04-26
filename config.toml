@@ -1,0 +1,72 @@
+baseURL = "https://USERNAME.github.io/cuaderno/"
+languageCode = "es-ES"
+defaultContentLanguage = "es"
+title = "Cuaderno"
+enableRobotsTXT = true
+summaryLength = 32
+relativeURLs = false
+
+[pagination]
+  pagerSize = 6
+
+[permalinks]
+  diarios = "/diarios/:year/:month/:slug/"
+  articulos = "/articulos/:slug/"
+  notas = "/notas/:slug/"
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+  section = ["HTML", "RSS"]
+
+[taxonomies]
+  tag = "tags"
+  serie = "series"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.highlight]
+    noClasses = false
+
+[params]
+  author = "Cuaderno desde Donostia"
+  description = "Memoria, ciencia, filosofia, arte y aprendizaje continuo desde Donostia."
+  tagline = "Memoria, ciencia y belleza cotidiana desde Donostia."
+  email = "hola@ejemplo.com"
+  github = "https://github.com/USERNAME/cuaderno"
+  mainSections = ["diarios", "articulos", "notas"]
+  introTitle = "Un cuaderno de memoria, ciencia y vida interior"
+  introText = "Escribo desde Donostia. Vengo del este, trabajo hoy en la industria de la automatizacion y sigo aprendiendo con la misma mezcla de asombro, disciplina y duda que me acompana desde la infancia."
+
+  [params.home]
+    featured = "articulos/entre-la-ciencia-y-la-musica"
+
+  [params.cta]
+    title = "Una vida no cabe en una sola disciplina"
+    text = "Aqui conviven apuntes sobre ciencia, recuerdos de juventud, musica, literatura, filosofia y la paciencia de seguir aprendiendo."
+
+[[menu.main]]
+  name = "Inicio"
+  url = "/"
+  weight = 1
+
+[[menu.main]]
+  name = "Diarios"
+  url = "/diarios/"
+  weight = 2
+
+[[menu.main]]
+  name = "Articulos"
+  url = "/articulos/"
+  weight = 3
+
+[[menu.main]]
+  name = "Notas"
+  url = "/notas/"
+  weight = 4
+
+[[menu.main]]
+  name = "Sobre mi"
+  url = "/sobre-mi/"
+  weight = 5

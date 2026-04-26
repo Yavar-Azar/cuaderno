@@ -1,0 +1,20 @@
+{{ define "main" }}
+  <section class="wrap section-top">
+    <p class="eyebrow">{{ .Section | title }}</p>
+    <h1>{{ .Title }}</h1>
+    {{ with .Content }}<div class="section-intro">{{ . }}</div>{{ end }}
+  </section>
+
+  <section class="wrap section-block">
+    <div class="card-grid">
+      {{ range .Pages.ByDate.Reverse }}
+        {{ partial "post-card.html" . }}
+      {{ else }}
+        <article class="empty-state">
+          <h2>Aun no hay contenido aqui</h2>
+          <p>Crea una nueva pieza y aparecera en esta seccion.</p>
+        </article>
+      {{ end }}
+    </div>
+  </section>
+{{ end }}

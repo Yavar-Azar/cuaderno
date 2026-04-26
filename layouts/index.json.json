@@ -1,0 +1,13 @@
+{{- $pages := where site.RegularPages "Section" "in" (site.Params.mainSections | default (slice "diarios" "articulos" "notas")) -}}
+[
+  {{- range $index, $page := first 20 $pages -}}
+    {{- if gt $index 0 }},{{ end }}
+    {
+      "title": {{ $page.Title | jsonify }},
+      "section": {{ $page.Section | jsonify }},
+      "summary": {{ (or $page.Params.summary $page.Summary) | plainify | jsonify }},
+      "permalink": {{ $page.Permalink | jsonify }},
+      "date": {{ $page.Date.Format "2006-01-02" | jsonify }}
+    }
+  {{- end -}}
+]

@@ -4,7 +4,7 @@ date: 2026-04-26
 draft: false
 summary: ""
 tags: ["madre", "memoria", "juventud", "familia"]
-cover: "imagenes/viaje.png"
+cover: "imagenes/viaje1.png"
 cover_alt: "Paisaje sereno para una historia de memoria familiar"
 cover_caption: ""
 ---

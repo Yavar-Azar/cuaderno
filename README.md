@@ -9,7 +9,7 @@ Notas internas del proyecto:
 - Sitio hecho con Hugo.
 - Publicación prevista en GitHub Pages mediante GitHub Actions.
 - Estructura editorial principal:
-  - content/notas
+  - content/notas.
   - content/diarios
   - content/articulos
 - Imágenes estáticas en static/imagenes

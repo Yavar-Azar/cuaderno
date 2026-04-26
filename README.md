@@ -1,6 +1,6 @@
 # Cuaderno
 
-Archivo personal de notas, diarios y ensayos en español.
++Archivo personal de notas, diarios y ensayos en español.
 
 La web nace como un cuaderno de memoria y pensamiento: infancia, juventud, aprendizaje, ciencia, filosofía, arte, música y vida cotidiana junto al mar.
 
